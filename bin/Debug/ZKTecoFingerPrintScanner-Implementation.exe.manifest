@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ZKTecoFingerPrintScanner-Implementation.exe" version="1.0.0.21" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="ZKTecoFingerPrintScanner-Implementation.exe" version="1.0.0.20" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="ZKTecoFingerPrintScanner-Implementation" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+esGBDhoz+oHoyU7hepkU2jsyp/q+kC4RtiU3JzdFxk=</dsig:DigestValue>
+        <dsig:DigestValue>52+cgiw6Fb+p73jDKdmAJdxVa8DUX3rwaZbXxEq9DN8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pz5+wcX36Qf/RI188NmkUCJatwF7ztYegbXSO1BvcV0=</dsig:DigestValue>
+        <dsig:DigestValue>hd28sYiUz07Zql7V2EHCUBpxM1C/HRlYu9Q8uuOW17s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -246,15 +246,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZKTecoFingerPrintScanner-Implementation.exe" size="327136">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZKTecoFingerPrintScanner-Implementation.exe" size="332256">
       <assemblyIdentity name="ZKTecoFingerPrintScanner-Implementation" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7VAuHzouLl1LdNuXHYna5DLqGvFBBxoxUi7ZxJtNktM=</dsig:DigestValue>
+        <dsig:DigestValue>qJwcOTlxP5kNiFRWnKwZaCqiG5ZdZdMdur1kksC0vYE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="ZKTecoFingerPrintScanner-Implementation.exe.config" size="1325">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FYc1CUKsTWdKfN5PrRVjiLmmLIU5QICQaJkmCSjrYV0=</dsig:DigestValue>
+    </hash>
+  </file>
 </asmv1:assembly>

@@ -25,7 +25,6 @@ using System.Net;
 
 using MaterialSkin;
 using System.Media;
-using NAudio.Wave;
 
 namespace Dofe_Re_Entry.UserControls.DeviceController
 {
@@ -43,7 +42,7 @@ namespace Dofe_Re_Entry.UserControls.DeviceController
         String companyName ="";
         Dictionary<string, string> companyDIC = new Dictionary<string, string>();
         int rowPrevuois  ;
-        
+        bool offLineMode = false;
 
 
 
@@ -908,6 +907,190 @@ namespace Dofe_Re_Entry.UserControls.DeviceController
 
                 else
                 {
+                    // to handel the offline mode 
+                    if (this.offLineMode)
+                    {
+                        // check if all the data is 
+                        if (picFPImg.Image == null)
+                        {
+                            MessageBox.Show(" PLease scan you finger ");
+                            return;
+
+                        }
+                        //String Bp = textBox2.Text.Replace(" ", "");
+                        if (textBox1.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter the BP ");
+                            return;
+
+                        }
+                    
+                        if (textBox5.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter the employee id  ");
+                            return;
+
+                        }
+                          //String Bp = textBox2.Text.Replace(" ", "");
+                        if (textBox7.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter the name ");
+                            return;
+
+                        }
+                          //String Bp = textBox2.Text.Replace(" ", "");
+                        if (textBox8.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter the company ");
+                            return;
+
+                        }
+                          //String Bp = textBox2.Text.Replace(" ", "");
+                        if (textBox9.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter gender ");
+                            return;
+
+                        }
+                          //String Bp = textBox2.Text.Replace(" ", "");
+                        if (textBox10.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter the natinality ");
+                            return;
+
+                        }
+                          //String Bp = textBox2.Text.Replace(" ", "");
+                        if (textBox11.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter the course ");
+                            return;
+
+                        }
+                          //String Bp = textBox2.Text.Replace(" ", "");
+                        if (textBox2.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter height ");
+                            return;
+
+                        }
+                          //String Bp = textBox2.Text.Replace(" ", "");
+                        if (textBox4.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter weight ");
+                            return;
+
+                        }
+                          //String Bp = textBox2.Text.Replace(" ", "");
+                        if (textBox12.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter BMI ");
+                            return;
+
+                        }
+                          //String Bp = textBox2.Text.Replace(" ", "");
+                        if (textBox13.Text.Replace(" ", "") == "")
+                        {
+                            MessageBox.Show(" PLease enter date of birth ");
+                            return;
+
+                        }
+
+                        Random rnd = new Random();
+
+
+                        // 1. save the image of finger print  
+
+                        using (Bitmap bmp = new Bitmap(picFPImg.ClientSize.Width,
+                                 picFPImg.ClientSize.Height))
+                        {
+
+                            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+                            // Create a new directory on the desktop
+
+                            string folderName = "PICS";
+                            string pathString = Path.Combine(desktopPath, folderName);
+                            Directory.CreateDirectory(pathString);
+                            pathString = Path.Combine(desktopPath, folderName);
+
+                            string imagePath = Path.Combine(pathString, label10.Text + "_" + textBox5.Text + "_" + textBox7.Text);
+                            this.pathP = Path.Combine(pathString, label10.Text + "_" + textBox5.Text + "_" + textBox7.Text);
+                            picFPImg.DrawToBitmap(bmp, picFPImg.ClientRectangle);
+                            bmp.Save(imagePath + ".jpg");
+                        }
+
+                        //MessageBox.Show("Captured successfully");
+
+
+                        //  MessageBox.Show(this.comboBox2.SelectedText);
+
+
+                        // export to PDF 
+                        string p11 = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                        String path1 = Path.Combine(p11, "d.docx");
+                        var wordApp1 = new Word.Application(); //Application();
+                        var wordDoc1 = wordApp1.Documents.Add(path1);
+
+                        wordDoc1.Content.Find.Execute(FindText: "{course}", ReplaceWith: textBox11.Text);
+                        wordDoc1.Content.Find.Execute(FindText: "{name}", ReplaceWith: textBox7.Text);
+                        wordDoc1.Content.Find.Execute(FindText: "{date}", ReplaceWith: DateTime.Now);
+                        wordDoc1.Content.Find.Execute(FindText: "{company}", ReplaceWith: textBox8.Text);
+                        wordDoc1.Content.Find.Execute(FindText: "{id}", ReplaceWith: textBox5.Text);
+                        wordDoc1.Content.Find.Execute(FindText: "{height}", ReplaceWith: textBox2.Text);
+                        wordDoc1.Content.Find.Execute(FindText: "{weight}", ReplaceWith: textBox4.Text);
+                        wordDoc1.Content.Find.Execute(FindText: "{bp}", ReplaceWith: textBox1.Text);
+                        wordDoc1.Content.Find.Execute(FindText: "{na}", ReplaceWith: textBox10.Text);
+                        wordDoc1.Content.Find.Execute(FindText: "{gen}", ReplaceWith: textBox9.Text);
+                        wordDoc1.Content.Find.Execute(FindText: "{dob}", ReplaceWith: textBox13.Text);
+                        wordDoc1.Content.Find.Execute(FindText: "{bmi}", ReplaceWith: textBox12.Text);
+
+
+
+                        string timestamp1 = DateTime.Now.Ticks.ToString();
+                        string uniqueNumber1 = timestamp1.Substring(0, 10);
+
+                        wordDoc1.Content.Find.Execute(FindText: "{ref}", ReplaceWith: uniqueNumber1);
+
+                        var shape1 = wordDoc1.Shapes.AddPicture(
+                            FileName: this.pathP + ".jpg",
+                            LinkToFile: false,
+                            SaveWithDocument: true,
+                            Left: wordApp1.InchesToPoints(4.34f),
+                            Top: wordApp1.InchesToPoints(8.20f),
+                            Width: wordApp1.InchesToPoints(1),
+                            Height: wordApp1.InchesToPoints(1)
+                        );
+
+                        wordDoc1.Saved = true;
+
+                        wordDoc1.SaveAs2(this.pathP + ".pdf", Word.WdSaveFormat.wdFormatPDF);
+                        wordDoc1.Close();
+                        wordApp1.Quit();
+
+
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        MessageBox.Show("Done");
+                        clear();
+
+
+                        textBox5.Text = "";
+                        textBox7.Text = "";
+                        textBox8.Text = "";
+                        textBox9.Text = "";
+                        textBox10.Text = "";
+                        textBox11.Text = "";
+                        textBox1.Text = "";
+                        textBox12.Text = "";
+                        textBox13.Text = "";
+
+
+
+
+                        return;
+                    }
+
+
+
                     // the device is inialized and redry to function 
                     if(label10.Text.ToLower() == "loading".ToLower())
                     {
@@ -1261,18 +1444,6 @@ namespace Dofe_Re_Entry.UserControls.DeviceController
                         
                     {
                         //Console.Beep();
-                        try
-                        {
-                            string p1 = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                            String path = Path.Combine(p1, "beep.mp3");
-                            IWavePlayer waveOutDevice = new WaveOut();
-                            AudioFileReader audioFileReader = new AudioFileReader(path);
-
-                            waveOutDevice.Init(audioFileReader);
-                            waveOutDevice.Play();
-
-                        }
-                        catch (Exception ex) { }
                         
 
                         //   MessageBox.Show(this.rowCourser.ToString());
@@ -1995,6 +2166,41 @@ namespace Dofe_Re_Entry.UserControls.DeviceController
                 Console.WriteLine(e2.Message);
                 this.rowCourser = 0;
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            this.offLineMode = true;
+
+            label10.Visible = false;
+            label16.Visible = false;
+            label18.Visible = false;
+            label11.Visible = false;
+            label14.Visible = false;
+            label13.Visible = false;
+            label21.Visible = false;
+            label23.Visible = false;
+
+            textBox5.Visible = true;
+            textBox7.Visible = true;
+            textBox8.Visible = true;
+            textBox9.Visible = true;
+            textBox10.Visible = true;
+            textBox11.Visible = true;
+            textBox1.Visible = true;
+            textBox12.Visible = true;
+            textBox13.Visible = true;
+
+
+          
+
+
+
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////
 

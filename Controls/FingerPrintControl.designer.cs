@@ -90,6 +90,15 @@
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picFPImg)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -482,6 +491,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.textBox13);
+            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.textBox11);
+            this.panel1.Controls.Add(this.textBox10);
+            this.panel1.Controls.Add(this.textBox9);
+            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label17);
@@ -548,12 +565,13 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(154, 396);
+            this.textBox1.Location = new System.Drawing.Point(142, 396);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox1.MaxLength = 8;
+            this.textBox1.MaxLength = 50;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(189, 30);
             this.textBox1.TabIndex = 801;
+            this.textBox1.Visible = false;
             // 
             // label15
             // 
@@ -583,7 +601,7 @@
             // 
             this.textBox4.BackColor = System.Drawing.SystemColors.Window;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox4.Location = new System.Drawing.Point(154, 347);
+            this.textBox4.Location = new System.Drawing.Point(142, 347);
             this.textBox4.Margin = new System.Windows.Forms.Padding(5);
             this.textBox4.MaxLength = 8;
             this.textBox4.Name = "textBox4";
@@ -594,7 +612,7 @@
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox2.Location = new System.Drawing.Point(154, 300);
+            this.textBox2.Location = new System.Drawing.Point(142, 300);
             this.textBox2.Margin = new System.Windows.Forms.Padding(5);
             this.textBox2.MaxLength = 8;
             this.textBox2.Name = "textBox2";
@@ -867,11 +885,124 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(204)))), ((int)(((byte)(240)))));
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(204)))), ((int)(((byte)(240)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(390, 468);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(265, 49);
+            this.button7.TabIndex = 809;
+            this.button7.Text = "Offline Mode";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox5.Location = new System.Drawing.Point(142, 14);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox5.MaxLength = 30;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(189, 30);
+            this.textBox5.TabIndex = 806;
+            this.textBox5.Visible = false;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox7.Location = new System.Drawing.Point(142, 57);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox7.MaxLength = 50;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(189, 30);
+            this.textBox7.TabIndex = 807;
+            this.textBox7.Visible = false;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox8.Location = new System.Drawing.Point(142, 101);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox8.MaxLength = 50;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(189, 30);
+            this.textBox8.TabIndex = 808;
+            this.textBox8.Visible = false;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox9.Location = new System.Drawing.Point(142, 145);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox9.MaxLength = 50;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(189, 30);
+            this.textBox9.TabIndex = 809;
+            this.textBox9.Visible = false;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox10.Location = new System.Drawing.Point(142, 194);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox10.MaxLength = 50;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(189, 30);
+            this.textBox10.TabIndex = 810;
+            this.textBox10.Visible = false;
+            // 
+            // textBox11
+            // 
+            this.textBox11.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox11.Location = new System.Drawing.Point(142, 249);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox11.MaxLength = 50;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(189, 30);
+            this.textBox11.TabIndex = 811;
+            this.textBox11.Visible = false;
+            // 
+            // textBox12
+            // 
+            this.textBox12.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox12.Location = new System.Drawing.Point(142, 438);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox12.MaxLength = 50;
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(189, 30);
+            this.textBox12.TabIndex = 812;
+            this.textBox12.Visible = false;
+            // 
+            // textBox13
+            // 
+            this.textBox13.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox13.Location = new System.Drawing.Point(142, 478);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox13.MaxLength = 50;
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(189, 30);
+            this.textBox13.TabIndex = 813;
+            this.textBox13.Visible = false;
+            // 
             // FingerPrintControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button5);
@@ -976,5 +1107,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
